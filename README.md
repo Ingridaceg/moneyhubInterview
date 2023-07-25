@@ -24,6 +24,7 @@ A request for a new admin feature has been received
   - Include actions to run the tests on Git
   - Add security
   - Deployment Automation 
+  - Use Ramda :)
 
 ### New routes
 
