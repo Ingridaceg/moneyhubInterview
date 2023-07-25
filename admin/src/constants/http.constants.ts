@@ -16,6 +16,7 @@ export const httpMethods = {
 
 export enum httpCodes {
   success = 200,
+  NoContent = 204,
   badRequestError = 400,
   unauthorizedError = 401,
   forbiddenError = 403,

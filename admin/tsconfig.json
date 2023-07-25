@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
     "module": "commonjs",
-    "outDir": "./src/dist",
-    "rootDir": "./src",
+    "outDir": "./dist",
+    "rootDir": "./",
     "strict": true,
     "typeRoots": ["./src/types", "node_modules/@types"],
     "types": ["jest", "node", "express"],
     "esModuleInterop": true,
     "inlineSourceMap": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "target": "es6",
+    "lib": ["es6", "es7", "es2017", "es2018"]
   },
   "include":  ["src/types/**/*", "src/**/*"],
   "exclude": [
