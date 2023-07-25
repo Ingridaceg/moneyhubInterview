@@ -4,66 +4,31 @@ At Moneyhub we use microservices to partition and separate the concerns of the c
 
 A request for a new admin feature has been received
 
-## Requirements
+## Questions
 
-- As an admin, I want to be able to generate a CSV report showing the values of all user investment holdings
-    - Any new routes should be added to the **admin** service
-    - The csv report should be sent to the `/export` route of the **investments** service
-    - The investments `/export` route expects the following:
-        - content-type as `application/json`
-        - JSON object containing the report as csv string, i.e, `{csv: '|User|First Name|...'}`
-    - The csv should contain a row for each holding matching the following headers
-    |User|First Name|Last Name|Date|Holding|Value|
-    - The **Holding** property should be the name of the holding account given by the **financial-companies** service
-    - The **Value** property can be calculated by `investmentTotal * investmentPercentage`
-    - The new route in the admin service handling the generation of the csv report should return the csv as text with content type `text/csv`
-- Ensure use of up to date packages and libraries (the service is known to use deprecated packages but there is no expectation to replace them)
-- Make effective use of git
-
-We prefer:
-- Functional code
-- Ramda.js (this is not a requirement but feel free to investigate)
-- Unit testing
-
-### Notes
-All of you work should take place inside the `admin` microservice
-
-For the purposes of this task we would assume there are sufficient security middleware, permissions access and PII safe protocols, you do not need to add additional security measures as part of this exercise.
-
-You are free to use any packages that would help with this task
-
-We're interested in how you break down the work and build your solution in a clean, reusable and testable manner rather than seeing a perfect example, try to only spend around *1-2 hours* working on it
-
-## Deliverables
-**Please make sure to update the readme with**:
-
-- Your new routes
 - How to run any additional scripts or tests you may have added
+  - npm run test
 - Relating to the task please add answers to the following questions;
-    1. How might you make this service more secure?
-    2. How would you make this solution scale to millions of records?
-    3. What else would you have liked to improve given more time?
+  #####  How might you make this service more secure?
+     1. Adding authenticated endpoints (use strong auth)
+     2. Use Https
+     3. Validate inputs to avoid code injection
+     4. Validate rate limits
+  #####  How would you make this solution scale to millions of records?
+    We can use multiple service running to generate different parts and at the end an orchestrator to get the final response
+  #####  What else would you have liked to improve given more time?
+  - Convert the whole project in a typescript project
+  - Test Cover for all the code
+  - Include all the linters and prettier to make code understandable
+  - Include integration tests
+  - Include actions to run the tests on Git
+  - Add security
+  - Deployment Automation 
 
+### New routes
 
-On completion email a link to your repository to your contact at Moneyhub and ensure it is publicly accessible.
-
-## Getting Started
-
-Please clone this service and push it to your own github (or other) public repository
-
-To develop against all the services each one will need to be started in each service run
-
-```bash
-npm start
-or
-npm run develop
-```
-
-The develop command will run nodemon allowing you to make changes without restarting
-
-The services will try to use ports 8081, 8082 and 8083
-
-Use Postman or any API tool of you choice to trigger your endpoints (this is how we will test your new route).
+Admin - localhost:8083
+- `/investment-csv/:id?` get csv by id, the id field is optional if you don't send it the csv will be generated for all.
 
 ### Existing routes
 We have provided a series of routes

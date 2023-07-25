@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690288384854" clover="3.2.0">
-  <project timestamp="1690288384854" name="All files">
+<coverage generated="1690288722669" clover="3.2.0">
+  <project timestamp="1690288722669" name="All files">
     <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8" elements="25" coveredelements="25" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
     <file name="investments.module.ts" path="/Users/ingridacero/Documents/DevProjects/GitHub/moneyhubInterview/admin/src/modules/investments.module.ts">
       <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
