@@ -9,3 +9,4 @@
 local.properties
 *.iml
 .cache
+.DS_Store
