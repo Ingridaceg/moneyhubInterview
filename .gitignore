@@ -1,0 +1,11 @@
+#webstorm
+.idea/
+.idea/atlassian-ide-plugin.xml
+.idea/vcs.xml
+.idea/caroogo-api.iml
+.idea/*
+.idea/**/*
+.gradle
+local.properties
+*.iml
+.cache
